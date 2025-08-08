@@ -1,10 +1,13 @@
+/* Définition des variables */
 :root {
   --bg-color: #0f1724;
   --text-color: #e6eef6;
---accent-color: #f5f5f5;
-  --btn-bg: #0b1220;
-  --btn-hover: #18334a;
-  --radius: 12px;
+  --accent-color: #f5f5f5;
+  --btn-bg: #1e293b; /* Couleur de fond du bouton plus foncée */
+  --btn-hover: #374151; /* Couleur de survol plus claire */
+  --btn-glow-base: rgba(0, 255, 255, 0.2); /* Lueur de base */
+  --btn-glow-hover: rgba(0, 255, 255, 0.6); /* Lueur intense au survol */
+  --radius: 20px; /* Rayon de bordure plus important */
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -18,25 +21,20 @@ body {
   align-items: center;
   justify-content: center;
   padding: 3rem 1rem;
-  /* Assurez-vous que le body a une position pour que le z-index fonctionne */
   position: relative;
 }
 
-/* Style de l'arrière-plan animé */
 #animated-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* Ceci place le canvas derrière tous les autres éléments */
   z-index: -1; 
 }
 
-/* Container du contenu pour se placer au-dessus du canvas */
 .content-container {
   position: relative;
-  /* Ceci place le contenu au-dessus du canvas */
   z-index: 1; 
   text-align: center;
   width: 100%;
@@ -51,7 +49,7 @@ h1 {
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--accent-color);
-  text-shadow: 0 0 10px rgba(110, 231, 183, 0.4);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
 }
 
 .photo-holder {
@@ -59,7 +57,7 @@ h1 {
   height: 180px;
   border-radius: 50%;
   border: 4px solid var(--accent-color);
-  box-shadow: 0 0 25px rgba(110, 231, 183, 0.6), 0 0 50px rgba(110, 231, 183, 0.3);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6), 0 0 50px rgba(0, 255, 255, 0.3);
   margin-bottom: 3rem;
   overflow: hidden;
   position: relative;
@@ -91,20 +89,24 @@ button {
   background: var(--btn-bg);
   border: none;
   border-radius: var(--radius);
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem; /* Augmentation du padding pour un meilleur aspect */
   color: var(--text-color);
   font-weight: 600;
   font-size: 1.1rem;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.45);
-  transition: all 0.3s ease;
-  min-width: 140px;
+  /* Effet de lueur et de profondeur */
+  box-shadow: 0 0 10px var(--btn-glow-base), 0 6px 18px rgba(0, 0, 0, 0.45);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transition plus fluide */
+  min-width: 160px; /* Largeur minimale augmentée */
+  position: relative;
+  overflow: hidden;
 }
 
 button:hover {
   background: var(--btn-hover);
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(2, 6, 23, 0.6);
+  transform: translateY(-8px) scale(1.05); /* Déplacement et agrandissement plus prononcés */
+  /* Lueur plus forte au survol */
+  box-shadow: 0 0 20px var(--btn-glow-hover), 0 10px 25px rgba(0, 0, 0, 0.6);
   color: var(--accent-color);
 }
 
