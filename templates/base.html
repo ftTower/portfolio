@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Portfolio{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <canvas id="animated-background"></canvas>
+  <div class="content-container">
+    <nav class="btn-container">
+      <a href="/" class="btn-link"><button class="btn">Accueil</button></a>
+      <a href="/a-propos" class="btn-link"><button class="btn">À propos</button></a>
+      <a href="/projets" class="btn-link"><button class="btn">Projets</button></a>
+      <a href="/blog" class="btn-link"><button class="btn">Blog</button></a>
+      <a href="/contact" class="btn-link"><button class="btn">Contact</button></a>
+      <a href="/cv" class="btn-link"><button class="btn">CV</button></a>
+    </nav>
+    {% block content %}{% endblock %}
+    <footer class="social-links">
+      <a href="https://github.com/ftTower" class="social-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/thomas-auer-winum/" class="social-link">LinkedIn</a>
+    </footer>
+  </div>
+  <script src="{{ url_for('static', filename='particles.js') }}"></script>
+  <script src="{{ url_for('static', filename='stars.js') }}"></script>
+</body>
+</html>
