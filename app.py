@@ -1,7 +1,9 @@
 import os
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__,
+            template_folder=os.path.join(os.path.dirname(__file__), '../../templates'),
+            static_folder=os.path.join(os.path.dirname(__file__), '../../static'))
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret')
 
 # Homepage
@@ -39,6 +41,10 @@ def contact():
 @app.route("/cv")
 def cv():
     return render_template("cv.html")
+
+def handler(event, context):
+    from netlify_flask import run
+    return run(app)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
