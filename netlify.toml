@@ -1,9 +1,6 @@
 [build]
-  # Commande pour installer les dépendances Python
   command = "pip install -r requirements.txt"
-  # Spécifiez que le dossier de publication est la racine du projet
   publish = "."
 
 [functions]
-  # Spécifiez le dossier où se trouve votre fonction
   directory = "netlify/functions"

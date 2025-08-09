@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template
+from wsgi_adapter import WsgiAdapter
 
 app = Flask(__name__,
             template_folder=os.path.join(os.path.dirname(__file__), '../../templates'),
