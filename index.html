@@ -4,30 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tower</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-  <nav class="btn-container">
-      <a href="/" class="btn-link"><button class="btn">Accueil</button></a>
-      <a href="/a-propos" class="btn-link"><button class="btn">À propos</button></a>
-      <a href="/projets" class="btn-link"><button class="btn">Projets</button></a>
-      <a href="/blog" class="btn-link"><button class="btn">Blog</button></a>
-      <a href="/contact" class="btn-link"><button class="btn">Contact</button></a>
-      <a href="/cv" class="btn-link"><button class="btn">CV</button></a>
-    </nav>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+
+  <nav class="btn-container">
+    <a href="index.html" class="btn-link"><button class="btn">Accueil</button></a>
+    <a href="a-propos.html" class="btn-link"><button class="btn">À propos</button></a>
+    <a href="projets.html" class="btn-link"><button class="btn">Projets</button></a>
+    <a href="blog.html" class="btn-link"><button class="btn">Blog</button></a>
+    <a href="contact.html" class="btn-link"><button class="btn">Contact</button></a>
+    <a href="cv.html" class="btn-link"><button class="btn">CV</button></a>
+  </nav>
 
   <canvas id="animated-background"></canvas>
 
   <div class="content-container">
     <header>
-      
       <div class="photo-holder">
-        <img src="{{ url_for('static', filename='images/tauer.jpg') }}" alt="Photo de profil de Thomas Auer" />
+        <img src="images/tauer.jpg" alt="Photo de profil de Thomas Auer" />
       </div>
       <h1>💻 Tower's Portfolio</h1>
       <p class="job-title">Développeur Full-stack & Cybersécurité</p>
@@ -55,19 +54,18 @@
         }
       </style>
       
-      </style>
       <p>
         Je suis Thomas Auer, un développeur passionné et étudiant à l'École 42. Je suis spécialisé en cybersécurité offensive et défensive, ainsi qu'en développement d'applications modernes. Mon objectif est de relever des défis techniques complexes tout en créant des solutions innovantes.
       </p>
     </section>
     
-    <img src="{{ url_for('static', filename='images/exolegend.png') }}" alt="À propos de moi" class="about-me-image neon-hover" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
+    <img src="images/exolegend.png" alt="À propos de moi" class="about-me-image neon-hover" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
     <style>
       .neon-hover {
-      transition: box-shadow 0.3s ease-out;
+        transition: box-shadow 0.3s ease-out;
       }
       .neon-hover:hover {
-      box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.7);
+        box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.7);
       }
     </style>
     
@@ -81,21 +79,18 @@
       </ul>
     </section>
     
-    
-    
     <section class="certifications-section">
       <h2>Mes Certifications</h2>
       <div class="certifications-marquee">
         <div class="certifications-track" style="display: flex; flex-wrap: wrap; gap: 20px;">
           <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="{{ url_for('static', filename='images/42.png') }}" alt="Certification" class="certification-image" />
+            <img src="images/42.png" alt="Certification" class="certification-image" />
             <p>RNCP +7 Systeme d'information et reseaux (en cours)</p>
           </div>
           <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="{{ url_for('static', filename='images/certificate.png') }}" alt="Certification" class="certification-image" />
+            <img src="images/certificate.png" alt="Certification" class="certification-image" />
             <p>HTB Certified Junior cybersécurity associate (en cours)</p>
           </div>
-         
         </div>
       </div>
     </section>
@@ -105,21 +100,21 @@
       <div class="certifications-marquee">
         <div class="certifications-track" style="display: flex; flex-wrap: wrap; gap: 20px;">
           <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="{{ url_for('static', filename='images/vaccine.png') }}" alt="Certification" class="certification-image" />
+            <img src="images/vaccine.png" alt="Certification" class="certification-image" />
             <p>Vaccine</p>
           </div>
           <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="{{ url_for('static', filename='images/shell.png') }}" alt="Certification" class="certification-image" />
+            <img src="images/shell.png" alt="Certification" class="certification-image" />
             <p>minishell</p>
           </div>
           <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="{{ url_for('static', filename='images/inquisitor.png') }}" alt="Certification" class="certification-image" />
+            <img src="images/inquisitor.png" alt="Certification" class="certification-image" />
             <p>inquisitor</p>
           </div>
           <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="{{ url_for('static', filename='images/stockholm.png') }}" alt="Certification" class="certification-image" />
+            <img src="images/stockholm.png" alt="Certification" class="certification-image" />
             <p>stockholm</p>
-             </div>
+          </div>
         </div>
       </div>
     </section>
@@ -131,7 +126,7 @@
     
   </div>
 
-  <script src="{{ url_for('static', filename='particles.js') }}"></script>
+  <script src="js/particles.js"></script>
 
 </body>
 </html>
