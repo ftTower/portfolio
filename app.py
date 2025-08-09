@@ -3,8 +3,7 @@ from flask import Flask, render_template
 from werkzeug.wrappers import Request, Response
 
 app = Flask(__name__,
-            template_folder=os.path.join(os.path.dirname(__file__), '../../templates'),
-            static_folder=os.path.join(os.path.dirname(__file__), '../../static'))
+            template_folder=os.path.join(os.path.dirname(__file__), '../../templates'))
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret')
 
 # Homepage
