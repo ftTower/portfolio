@@ -8,20 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
 
-  <canvas id="animated-background"></canvas>
-
-  <div class="content-container">
-    <header>
-      
-      <footer class="social-links">
-      <a href="https://github.com/ftTower" class="social-link">GitHub</a>
-      <a href="https://www.linkedin.com/in/thomas-auer-winum/" class="social-link">LinkedIn</a>
-    </footer>
-    
-      <nav class="btn-container">
+  <nav class="btn-container">
       <a href="/" class="btn-link"><button class="btn">Accueil</button></a>
       <a href="/a-propos" class="btn-link"><button class="btn">À propos</button></a>
       <a href="/projets" class="btn-link"><button class="btn">Projets</button></a>
@@ -29,7 +17,15 @@
       <a href="/contact" class="btn-link"><button class="btn">Contact</button></a>
       <a href="/cv" class="btn-link"><button class="btn">CV</button></a>
     </nav>
-    
+</head>
+
+<body>
+
+  <canvas id="animated-background"></canvas>
+
+  <div class="content-container">
+    <header>
+      
       <div class="photo-holder">
         <img src="{{ url_for('static', filename='images/tauer.jpg') }}" alt="Photo de profil de Thomas Auer" />
       </div>
@@ -99,6 +95,7 @@
             <img src="{{ url_for('static', filename='images/certificate.png') }}" alt="Certification" class="certification-image" />
             <p>HTB Certified Junior cybersécurity associate (en cours)</p>
           </div>
+         
         </div>
       </div>
     </section>
@@ -122,11 +119,15 @@
           <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
             <img src="{{ url_for('static', filename='images/stockholm.png') }}" alt="Certification" class="certification-image" />
             <p>stockholm</p>
-          </div>
+             </div>
         </div>
       </div>
     </section>
 
+    <footer class="social-links">
+      <a href="https://github.com/ftTower" class="social-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/thomas-auer-winum/" class="social-link">LinkedIn</a>
+    </footer>
     
   </div>
 
