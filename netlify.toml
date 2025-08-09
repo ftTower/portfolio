@@ -1,6 +1,9 @@
 [build]
-  command = "pip install -r requirements.txt"
-  publish = "."
+  command = "pip install -r requirements.txt && netlify-lambda build functions"
+
+[[plugins]]
+  package = "netlify-plugin-flask"
 
 [functions]
   directory = "netlify/functions"
+  external_node_modules = ["flask"]
