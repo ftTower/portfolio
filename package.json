@@ -1,0 +1,13 @@
+{
+  "name": "your-portfolio-project",
+  "version": "1.0.0",
+  "description": "A Flask-based portfolio website",
+  "main": "app.py",
+  "scripts": {
+    "build": "pip install -r requirements.txt"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "netlify-plugin-flask": "^1.0.0"
+  }
+}
