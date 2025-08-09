@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template
-from werkzeug.wrappers import Request, Response
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret')

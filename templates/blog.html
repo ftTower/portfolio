@@ -1,10 +1,35 @@
-{% extends "base.html" %}
-{% block title %}Mon Blog{% endblock %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<nav class="btn-container">
+      <a href="/" class="btn-link"><button class="btn">Accueil</button></a>
+      <a href="/a-propos" class="btn-link"><button class="btn">À propos</button></a>
+      <a href="/projets" class="btn-link"><button class="btn">Projets</button></a>
+      <a href="/blog" class="btn-link"><button class="btn">Blog</button></a>
+      <a href="/contact" class="btn-link"><button class="btn">Contact</button></a>
+      <a href="/cv" class="btn-link"><button class="btn">CV</button></a>
+    </nav>
+	<title>Portfolio de Thomas Auer</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 
-{% block content %}
-<h1>Mes Rapports de Sécurité</h1>
-<p>Bienvenue dans la section où je partage tous mes audits de sécurité réalisés dans le cadre de CTF, YesWeHack, et d'autres plateformes.</p>
-<ul>
-    
-</ul>
-{% endblock %}
+	<canvas id="animated-background"></canvas>
+
+	<div class="content-container">
+		<h1>Mes Rapports de Sécurité</h1>
+		<p>Bienvenue dans la section où je partage tous mes audits de sécurité réalisés dans le cadre de CTF, YesWeHack, et d'autres plateformes.</p>
+		<ul>
+			
+		</ul>
+	</div>
+
+	<script src="{{ url_for('static', filename='stars.js') }}"></script>
+
+</body>
+</html>
