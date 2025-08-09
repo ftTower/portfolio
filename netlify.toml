@@ -2,8 +2,5 @@
   command = "pip install -r requirements.txt"
   publish = "."
 
-[[plugins]]
-  package = "netlify-plugin-flask"
-
 [functions]
   directory = "netlify/functions"
