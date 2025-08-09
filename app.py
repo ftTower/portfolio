@@ -1,9 +1,12 @@
 import os
 from flask import Flask, render_template
 from werkzeug.wrappers import Request, Response
+from base64 import b64encode
 
+# Le dossier 'static' est de retour, car la fonction doit pouvoir y accéder
 app = Flask(__name__,
-            template_folder=os.path.join(os.path.dirname(__file__), '../../templates'))
+            template_folder=os.path.join(os.path.dirname(__file__), '../../templates'),
+            static_folder=os.path.join(os.path.dirname(__file__), '../../static'))
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret')
 
 # Homepage
@@ -14,22 +17,19 @@ def index():
 # About page
 @app.route("/a-propos")
 def about():
-    # You would create an 'about.html' file
     return render_template("about.html")
 
 # Projects page
 @app.route("/projets")
 def projects():
-    # Example projects list
     projects_list = [
         {"title": "Projet 1", "desc": "Un projet en Python et Flask.", "link": "#"},
         {"title": "Projet 2", "desc": "Application web avec JavaScript.", "link": "#"},
         {"title": "Projet 3", "desc": "Analyse de données avec Pandas.", "link": "#"}
     ]
-    # You would create a 'projects.html' file that can display this list
     return render_template("projets.html", projects=projects_list)
 
-# Other pages (Blog, Contact, CV)
+# Other pages
 @app.route("/blog")
 def blog():
     return render_template("blog.html")
@@ -42,19 +42,37 @@ def contact():
 def cv():
     return render_template("cv.html")
 
+# Un dictionnaire pour les types de médias binaires
+BINARY_TYPES = {
+    'image/jpeg', 'image/png', 'image/gif', 'application/octet-stream', 'application/pdf',
+}
+
 def handler(event, context):
     with app.test_request_context(
         path=event["path"],
         method=event["httpMethod"],
         headers=event["headers"],
         data=event.get("body", "")
-    ) as request_context:
-        request_context.request = Request(request_context.environ)
+    ):
+        request = Request(app.test_request_context().environ)
         response = app.full_dispatch_request()
+
+        is_base64_encoded = False
+        body = response.get_data()
+        content_type = response.headers.get("Content-Type", "")
+        
+        # Vérifiez si le contenu doit être encodé en base64
+        if any(binary_type in content_type for binary_type in BINARY_TYPES):
+            body = b64encode(body).decode('utf-8')
+            is_base64_encoded = True
+        else:
+            body = body.decode('utf-8')
+        
         return {
             'statusCode': response.status_code,
             'headers': dict(response.headers),
-            'body': response.get_data().decode('utf-8')
+            'body': body,
+            'isBase64Encoded': is_base64_encoded
         }
 
 if __name__ == "__main__":
