@@ -42,20 +42,5 @@ def contact():
 def cv():
     return render_template("cv.html")
 
-def handler(event, context):
-    with app.test_request_context(
-        path=event["path"],
-        method=event["httpMethod"],
-        headers=event["headers"],
-        data=event.get("body", "")
-    ) as request_context:
-        request_context.request = Request(request_context.environ)
-        response = app.full_dispatch_request()
-        return {
-            'statusCode': response.status_code,
-            'headers': dict(response.headers),
-            'body': response.get_data().decode('utf-8')
-        }
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
