@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tower</title>
+  <title>Tauer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -14,8 +14,6 @@
 
   <nav class="btn-container">
     <a href="index.html" class="btn-link"><button class="btn">Accueil</button></a>
-    <a href="about.html" class="btn-link"><button class="btn">À propos</button></a>
-    <a href="projets.html" class="btn-link"><button class="btn">Projets</button></a>
     <a href="blog.html" class="btn-link"><button class="btn">Blog</button></a>
     <a href="contact.html" class="btn-link"><button class="btn">Contact</button></a>
     <a href="cv.html" class="btn-link"><button class="btn">CV</button></a>
@@ -29,7 +27,7 @@
       <div class="photo-holder">
         <img src="images/tauer.jpg" alt="Photo de profil de Thomas Auer" />
       </div>
-      <h1>💻 Tower's Portfolio</h1>
+      <h1>💻 Portfolio de Tauer</h1>
       <p class="job-title">Développeur Full-stack & Cybersécurité</p>
     </header>
 
@@ -73,52 +71,118 @@
     <section class="skills-section">
       <h2>Mes Compétences</h2>
       <ul class="skills-list">
-        <li class="skill-item">Bases de données (SQL, MongoDB)</li>
-        <li class="skill-item">Cybersécurité offensive et défensive</li>
-        <li class="skill-item">Langages : C, C++, Python, Bash, Docker</li>
-        <li class="skill-item">Systèmes d'exploitation : Linux, Windows</li>
+      <li class="skill-item">Bases de données (SQL, MongoDB)</li>
+      <li class="skill-item">Cybersécurité offensive et défensive</li>
+      <li class="skill-item">Langages : C, C++, Python, Bash, Docker</li>
+      <li class="skill-item">Systèmes d'exploitation : Linux, Windows</li>
       </ul>
     </section>
+    <style></style>
+    <style>
+      /* Forcer une seule ligne (une hauteur) et activer le défilement horizontal */
+      .certifications-section .certifications-marquee {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+
+      /* Masquer la barre de défilement */
+      scrollbar-width: none;      /* Firefox */
+      -ms-overflow-style: none;   /* IE et Edge */
+      }
+      .certifications-section .certifications-marquee::-webkit-scrollbar {
+      display: none;              /* Chrome, Safari, Opera */
+      }
+      .certifications-section .certifications-track {
+      display: flex;
+      gap: 20px;
+      flex-wrap: nowrap; /* une seule ligne */
+      }
+      .certifications-section .certification-item {
+      flex: 0 0 auto;       /* ne pas s'étirer, rester en ligne */
+      width: 240px;         /* largeur fixe pour l'uniformité */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+      .certifications-section .certification-image {
+      height: 120px;        /* fixe la hauteur pour garder une seule ligne */
+      width: auto;
+      object-fit: contain;
+      display: block;
+      }
+      .certifications-section .certification-item p {
+      margin-top: 8px;
+      max-width: 100%;
+      white-space: nowrap;   /* éviter le retour à la ligne */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      }
+    </style>
     
     <section class="certifications-section">
       <h2>Mes Certifications</h2>
       <div class="certifications-marquee">
-        <div class="certifications-track" style="display: flex; flex-wrap: wrap; gap: 20px;">
-          <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="images/42.png" alt="Certification" class="certification-image" />
-            <p>RNCP +7 Systeme d'information et reseaux (en cours)</p>
-          </div>
-          <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="images/certificate.png" alt="Certification" class="certification-image" />
-            <p>HTB Certified Junior cybersécurity associate (en cours)</p>
-          </div>
-        </div>
+      <div class="certifications-track">
+      <div class="certification-item">
+      <img src="images/42.png" alt="Certification" class="certification-image" style="width: 200px; height: 150px; object-fit: contain;" />
+      <p class="certification-text" title="RNCP +7 Systeme d'information et reseaux (en cours)">RNCP +7 Systeme d'information et reseaux (en cours)</p>
+      </div>
+      <div class="certification-item">
+      <img src="images/certificate.png" alt="Certification" class="certification-image" style="width: 200px; height: 150px; object-fit: contain;" />
+      <p class="certification-text" title="HTB Certified Junior cybersécurity associate (en cours)">HTB Certified Junior cybersécurity associate (en cours)</p>
+      </div>
+      </div>
       </div>
     </section>
     
     <section class="certifications-section">
       <h2>Mes Projets</h2>
       <div class="certifications-marquee">
-        <div class="certifications-track" style="display: flex; flex-wrap: wrap; gap: 20px;">
-          <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="images/vaccine.png" alt="Certification" class="certification-image" />
-            <p>Vaccine</p>
-          </div>
-          <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="images/shell.png" alt="Certification" class="certification-image" />
-            <p>minishell</p>
-          </div>
-          <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="images/inquisitor.png" alt="Certification" class="certification-image" />
-            <p>inquisitor</p>
-          </div>
-          <div class="certification-item" style="flex: 1 1 calc(50% - 20px);">
-            <img src="images/stockholm.png" alt="Certification" class="certification-image" />
-            <p>stockholm</p>
-          </div>
-        </div>
+      <div class="certifications-track">
+      <div class="certification-item">
+      <img src="images/vaccine.png" alt="Certification" class="certification-image" style="width: 200px; height: 150px; object-fit: contain;" />
+      <p class="certification-text" title="Vaccine">Vaccine</p>
+      </div>
+      <div class="certification-item">
+      <img src="images/shell.png" alt="Certification" class="certification-image" style="width: 200px; height: 150px; object-fit: contain;" />
+      <p class="certification-text" title="minishell">minishell</p>
+      </div>
+      <div class="certification-item">
+      <img src="images/inquisitor.png" alt="Certification" class="certification-image" style="width: 200px; height: 150px; object-fit: contain;" />
+      <p class="certification-text" title="inquisitor">inquisitor</p>
+      </div>
+      <div class="certification-item">
+      <img src="images/stockholm.png" alt="Certification" class="certification-image" style="width: 200px; height: 150px; object-fit: contain;" />
+      <p class="certification-text" title="stockholm">stockholm</p>
+      </div>
+      </div>
       </div>
     </section>
+    
+    <style>
+    .certification-text {
+      margin-top: 8px;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .certification-text:hover {
+      white-space: normal;
+      overflow: visible;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 5px;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    </style>
 
     <footer class="social-links">
       <a href="https://github.com/ftTower" class="social-link">GitHub</a>
