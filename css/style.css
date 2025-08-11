@@ -127,7 +127,7 @@ button::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(59, 130, 246, 0.08), transparent);
+  background: linear-gradient(120deg, transparent, rgba(0, 255, 255, 0.15), transparent);
   transform: translateX(-100%);
   transition: transform 0.5s ease;
 }
@@ -140,8 +140,8 @@ button:hover {
   background: var(--btn-hover);
   transform: translateY(-6px) scale(1.05);
   box-shadow: 0 0 20px var(--btn-glow-hover),
-              0 10px 25px rgba(59, 130, 246, 0.13);
-  color: #fff;
+              0 10px 25px rgba(0, 0, 0, 0.6);
+  color: var(--accent-color);
 }
 
 .skills-section {
@@ -154,22 +154,21 @@ button:hover {
 }
 
 .skill-item {
-  background: rgba(59, 130, 246, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   padding: 0.8rem 1.2rem;
   margin: 0.5rem 0;
   border-radius: var(--radius);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  font-size: 1.1rem;
-  color: var(--text-color);
+  font-size: 1.1rem; /* Increased font size for better readability */
 }
 
 .skill-item::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(59, 130, 246, 0.08), transparent);
+  background: linear-gradient(120deg, transparent, rgba(0, 255, 255, 0.15), transparent);
   transform: translateX(-100%);
   transition: transform 0.5s ease;
 }
@@ -179,10 +178,10 @@ button:hover {
 }
 
 .skill-item:hover {
-  background: rgba(59, 130, 246, 0.09);
+  background: rgba(0, 255, 255, 0.1);
   transform: translateX(6px) scale(1.05);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.13),
-              0 0 30px rgba(59, 130, 246, 0.09);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6),
+              0 0 30px rgba(0, 255, 255, 0.3);
   color: var(--accent-color);
 }
 
@@ -199,8 +198,8 @@ footer.social-links {
 }
 
 .social-link:hover {
-  color: #2563eb;
-  text-shadow: 0 0 8px #3b82f6;
+  color: cyan;
+  text-shadow: 0 0 8px cyan;
 }
 
 /* Animations */
@@ -234,16 +233,16 @@ footer.social-links {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background: rgba(59, 130, 246, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius);
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.07);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
   transition: var(--transition);
   overflow: hidden;
   position: relative;
-  max-width: 300px;
-  margin: 1rem;
+  max-width: 300px; /* Restrict card width */
+  margin: 1rem; /* Add spacing between cards */
 }
 
 .audit-card img {
@@ -256,7 +255,7 @@ footer.social-links {
 
 .audit-card img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.13);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
 }
 
 .audit-card p {
@@ -274,21 +273,21 @@ footer.social-links {
 }
 
 .audit-card a:hover {
-  color: #2563eb;
-  text-shadow: 0 0 8px #3b82f6;
+  color: cyan;
+  text-shadow: 0 0 8px cyan;
 }
 
 .audit-card:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.13);
-  background: rgba(59, 130, 246, 0.09);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  background: rgba(0, 255, 255, 0.1);
 }
 
 /* Marquee for certifications/projects (single-row height) */
 :root {
   --marquee-speed: 28s;
   --marquee-gap: 1.25rem;
-  --cert-card-max-h: 200px;
+  --cert-card-max-h: 200px; /* keep to one row (image + one line of text) */
 }
 
 .certifications-section {
@@ -301,7 +300,6 @@ footer.social-links {
   width: 100%;
   max-height: var(--cert-card-max-h);
   mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
-  background: transparent;
 }
 
 .certifications-track {
@@ -318,33 +316,32 @@ footer.social-links {
 }
 
 .certification-text {
-  margin-top: 8px;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-  transition: all 0.3s ease;
-  color: var(--text-color);
-}
-
-.certification-text:hover {
-  white-space: normal;
-  overflow: visible;
-  position: relative;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 5px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.09);
-}
+      margin-top: 8px;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+  .certification-text:hover {
+    white-space: normal;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
 
 .certification-item {
   flex: 0 0 auto;
-  background: rgba(59, 130, 246, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius);
   padding: 0.75rem 1rem;
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.07);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.18);
   transition: var(--transition);
   max-height: calc(var(--cert-card-max-h) - 8px);
   display: grid;
@@ -353,17 +350,17 @@ footer.social-links {
 
 .certification-item:hover {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.13);
-  background: rgba(59, 130, 246, 0.09);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  background: rgba(0, 255, 255, 0.08);
 }
 
 .certification-image {
-  display: block;
+  display: block; /* respect inline dimensions, avoid layout jumps */
 }
 
 @keyframes certs-marquee {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-60%); }
+  100% { transform: translateX(-60%); } /* adjust if you add more cards */
 }
 
 @media (max-width: 600px) {
@@ -388,16 +385,15 @@ footer.social-links {
   gap: 1rem;
   margin: 0;
   padding: 0.8rem 1.2rem;
-  background: rgba(59, 130, 246, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius);
   transition: var(--transition);
-  color: var(--text-color);
 }
 
 .contact-list p:hover {
-  background: rgba(59, 130, 246, 0.09);
+  background: rgba(0, 255, 255, 0.1);
   transform: translateX(6px);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.09);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
 }
 
 .contact-list strong {
@@ -408,17 +404,18 @@ footer.social-links {
 }
 
 .contact-list a {
-  color: var(--accent-color);
+  color: var(--text-color);
   text-decoration: none;
   transition: var(--transition);
 }
 
 .contact-list a:hover {
-  color: #2563eb;
-  text-shadow: 0 0 8px #3b82f6;
+  color: cyan;
+  text-shadow: 0 0 8px cyan;
 }
 
 .contact-list strong::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
+
