@@ -424,14 +424,13 @@ footer.social-links {
   gap: 2rem;
   justify-content: center;
   align-items: stretch;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
+  margin: 0 auto;
+  position: relative;
   padding: 3rem 1rem;
   box-sizing: border-box;
+  max-width: 1200px;
 }
 
 .report-card {
@@ -440,7 +439,7 @@ footer.social-links {
   box-shadow: 0 0 18px rgba(0, 255, 255, 0.18);
   padding: 1.5rem 1.2rem;
   margin: 1rem 0;
-  max-width: 420px;
+  max-width: 380px;
   width: 100%;
   transition: var(--transition);
   display: flex;
@@ -450,12 +449,7 @@ footer.social-links {
   overflow: hidden;
   flex: 1 1 320px;
   min-width: 280px;
-}
-
-.report-card:hover {
-  background: rgba(0, 255, 255, 0.10);
-  box-shadow: 0 0 28px rgba(0, 255, 255, 0.32);
-  transform: translateY(-4px) scale(1.025);
+  align-self: stretch;
 }
 
 .report-card-header h2 {
@@ -498,10 +492,12 @@ footer.social-links {
     align-items: center;
     min-height: 100vh;
     padding: 2rem 0.5rem;
+    max-width: 100%;
   }
   .report-card {
     max-width: 100%;
     min-width: 0;
+    align-self: stretch;
   }
 }
 
