@@ -282,3 +282,119 @@ footer.social-links {
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
   background: rgba(0, 255, 255, 0.1);
 }
+
+/* Marquee for certifications/projects (single-row height) */
+:root {
+  --marquee-speed: 28s;
+  --marquee-gap: 1.25rem;
+  --cert-card-max-h: 200px; /* keep to one row (image + one line of text) */
+}
+
+.certifications-section {
+  margin-top: 2.5rem;
+}
+
+.certifications-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-height: var(--cert-card-max-h);
+  mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+}
+
+.certifications-track {
+  display: flex;
+  align-items: center;
+  gap: var(--marquee-gap);
+  flex-wrap: nowrap;
+  animation: certs-marquee var(--marquee-speed) linear infinite;
+  will-change: transform;
+}
+
+.certifications-track:hover {
+  animation-play-state: paused;
+}
+
+.certification-item {
+  flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.18);
+  transition: var(--transition);
+  max-height: calc(var(--cert-card-max-h) - 8px);
+  display: grid;
+  place-items: center;
+}
+
+.certification-item:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  background: rgba(0, 255, 255, 0.08);
+}
+
+.certification-image {
+  display: block; /* respect inline dimensions, avoid layout jumps */
+}
+
+@keyframes certs-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-60%); } /* adjust if you add more cards */
+}
+
+@media (max-width: 600px) {
+  :root { --marquee-speed: 20s; }
+  .certifications-marquee { max-height: 170px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certifications-track { animation: none; }
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.contact-list p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.8rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.contact-list p:hover {
+  background: rgba(0, 255, 255, 0.1);
+  transform: translateX(6px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.contact-list strong {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 100px;
+}
+
+.contact-list a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-list a:hover {
+  color: cyan;
+  text-shadow: 0 0 8px cyan;
+}
+
+.contact-list strong::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
