@@ -418,6 +418,15 @@ footer.social-links {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
+.report-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  margin: 2rem 0;
+}
 
 .report-card {
   background: rgba(255, 255, 255, 0.06);
@@ -433,6 +442,8 @@ footer.social-links {
   gap: 1rem;
   position: relative;
   overflow: hidden;
+  flex: 1 1 320px; /* allow cards to grow/shrink, min width */
+  min-width: 280px;
 }
 
 .report-card:hover {
@@ -472,6 +483,18 @@ footer.social-links {
   color: cyan;
   text-shadow: 0 0 8px cyan;
   border-bottom: 1px solid cyan;
+}
+
+@media (max-width: 900px) {
+  .report-cards-container {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  .report-card {
+    max-width: 100%;
+    min-width: 0;
+  }
 }
 
 @media (max-width: 600px) {
