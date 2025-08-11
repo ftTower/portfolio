@@ -315,6 +315,27 @@ footer.social-links {
   animation-play-state: paused;
 }
 
+.certification-text {
+      margin-top: 8px;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+  .certification-text:hover {
+    white-space: normal;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
 .certification-item {
   flex: 0 0 auto;
   background: rgba(255, 255, 255, 0.05);
