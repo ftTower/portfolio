@@ -424,8 +424,14 @@ footer.social-links {
   gap: 2rem;
   justify-content: center;
   align-items: stretch;
-  width: 100%;
-  margin: 2rem 0;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
 }
 
 .report-card {
@@ -442,7 +448,7 @@ footer.social-links {
   gap: 1rem;
   position: relative;
   overflow: hidden;
-  flex: 1 1 320px; /* allow cards to grow/shrink, min width */
+  flex: 1 1 320px;
   min-width: 280px;
 }
 
@@ -490,6 +496,8 @@ footer.social-links {
     flex-direction: column;
     gap: 1.2rem;
     align-items: center;
+    min-height: 100vh;
+    padding: 2rem 0.5rem;
   }
   .report-card {
     max-width: 100%;

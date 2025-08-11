@@ -13,7 +13,7 @@
 
   <nav class="btn-container">
     <a href="index.html" class="btn-link"><button class="btn">Accueil</button></a>
-    <a href="blog.html" class="btn-link"><button class="btn">Blog</button></a>
+    <a href="blog.html" class="btn-link"><button class="btn">Write-up</button></a>
     <a href="contact.html" class="btn-link"><button class="btn">Contact</button></a>
     <a href="cv.html" class="btn-link"><button class="btn">CV</button></a>
   </nav>
@@ -25,17 +25,10 @@
     <p>Bienvenue dans la section où je partage tous mes audits de sécurité réalisés dans le cadre de CTF, YesWeHack, et d'autres plateformes.</p>
     <ul>
       
-      <div class="report-controls">
-        <label for="sort-reports">Trier par :</label>
-        <select id="sort-reports" onchange="sortReports()">
-          <option value="recent">Plus récent</option>
-          <option value="alpha">Ordre alphabétique</option>
-        </select>
-      </div>
-      <li class="report-item" data-title="Audit CTF XYZ" data-date="2024-05-01">
+      <!--<li>
         <article class="report-card">
           <header class="report-card-header">
-        <img src="images/blank.png" alt="Illustration Audit CTF XYZ" class="report-img" />
+        <img src="images/blank.png" alt="Logo CTF XYZ" class="report-card-image" />
         <h2>Rapport 1: Audit CTF XYZ</h2>
           </header>
           <section class="report-card-body">
@@ -46,10 +39,10 @@
           </footer>
         </article>
       </li>
-      <li class="report-item" data-title="YesWeHack - Application ABC" data-date="2024-04-15">
+      <li>
         <article class="report-card">
           <header class="report-card-header">
-        <img src="images/blank.png" alt="Illustration YesWeHack ABC" class="report-img" />
+        <img src="images/blank.png" alt="Logo YesWeHack ABC" class="report-card-image" />
         <h2>Rapport 2: YesWeHack - Application ABC</h2>
           </header>
           <section class="report-card-body">
@@ -60,22 +53,7 @@
           </footer>
         </article>
       </li>
-      <script>
-        function sortReports() {
-          const select = document.getElementById('sort-reports');
-          const ul = select.closest('ul');
-          const items = Array.from(ul.querySelectorAll('.report-item'));
-          if (select.value === 'alpha') {
-        items.sort((a, b) => a.dataset.title.localeCompare(b.dataset.title));
-          } else {
-        items.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
-          }
-          items.forEach(item => ul.appendChild(item));
-        }
-      </script>
-      
-      
-      <!-- ici tu peux ajouter des liens vers tes rapports -->
+      -->
     </ul>
   </div>
 
